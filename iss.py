@@ -70,6 +70,12 @@ def show_ISS(dict_cor, dict_indi):
     t2.dot(8, "yellow")
     t2.color('yellow')
     t2.write(indi_time)
+
+    while True:
+        time.sleep(2)
+        print("downloading cordinatess......")
+        iss_cord = iss_loc("http://api.open-notify.org/iss-now.json")
+        t.setpos(float(iss_cord['longitude']), float(iss_cord['latitude']))
     turtle.mainloop()
 
 
